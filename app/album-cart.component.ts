@@ -6,8 +6,8 @@ import { Album } from './album.model';
   template: `
   <div>
     <input *ngIf="album.inCart === true" type="checkbox" checked (click)="toggleCart(false)"/>
-    <input *ngIf="album.inCart === false" type"checkbox" (click)="toggleCart(true)"/>
-    <label>{{ album.name }}</label>
+    <input *ngIf="album.inCart === false" type="checkbox" (click)="toggleCart(true)"/>
+    <label>Add to Cart</label>
   </div>
   `
 })
@@ -16,5 +16,5 @@ export class CartComponent {
   @Input() album: Album;
   toggleCart(setCart: boolean) {
     this.album.inCart = setCart;
-    }
+  }
 }
